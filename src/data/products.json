@@ -1,0 +1,177 @@
+[
+  {
+    "id": "outdoor-dining-set",
+    "name": "Teak Outdoor Dining Set",
+    "price": 1299,
+    "image": "/images/products/outdoor-dining-set.jpg",
+    "model": "/src/assets/models/outdoor-dining-set.glb",
+    "category": "Dining Sets",
+    "description": "Premium teak wood dining set with 6 chairs, perfect for outdoor entertaining.",
+    "features": ["Weather resistant", "Sustainable teak", "Includes cushions", "Seats 6 people"]
+  },
+  {
+    "id": "garden-lounge-chair",
+    "name": "Garden Lounge Chair",
+    "price": 459,
+    "image": "/images/products/garden-lounge-chair.jpg",
+    "model": "/src/assets/models/garden-lounge-chair.glb",
+    "category": "Seating",
+    "description": "Comfortable rattan lounge chair with weather-resistant cushions.",
+    "features": ["All-weather rattan", "Comfortable cushions", "Lightweight design", "Easy to clean"]
+  },
+  {
+    "id": "patio-umbrella",
+    "name": "Premium Patio Umbrella",
+    "price": 299,
+    "image": "/images/products/patio-umbrella.jpg",
+    "model": "/src/assets/models/patio-umbrella.glb",
+    "category": "Shade Solutions",
+    "description": "Large 9ft patio umbrella with UV protection and wind resistance.",
+    "features": ["UV protection", "Wind resistant", "Easy tilt mechanism", "Fade resistant fabric"]
+  },
+  {
+    "id": "garden-bench",
+    "name": "Teak Garden Bench",
+    "price": 389,
+    "image": "/images/products/garden-bench.jpg",
+    "model": "/src/assets/models/garden-bench.glb",
+    "category": "Seating",
+    "description": "Classic teak garden bench with ergonomic design and natural finish.",
+    "features": ["Grade A teak", "Ergonomic design", "Natural finish", "Seats 2-3 people"]
+  },
+  {
+    "id": "outdoor-coffee-table",
+    "name": "Outdoor Coffee Table",
+    "price": 329,
+    "image": "/images/products/outdoor-coffee-table.jpg",
+    "model": "/src/assets/models/outdoor-coffee-table.glb",
+    "category": "Tables",
+    "description": "Modern aluminum coffee table with tempered glass top.",
+    "features": ["Tempered glass top", "Aluminum frame", "Weather resistant", "Easy maintenance"]
+  },
+  {
+    "id": "garden-planter-set",
+    "name": "Garden Planter Set",
+    "price": 189,
+    "image": "/images/products/garden-planter-set.jpg",
+    "model": "/src/assets/models/garden-planter-set.glb",
+    "category": "Planters",
+    "description": "Set of 3 ceramic planters in different sizes for garden decoration.",
+    "features": ["Ceramic construction", "Drainage holes", "3 different sizes", "Frost resistant"]
+  },
+  {
+    "id": "outdoor-sectional",
+    "name": "Modular Outdoor Sectional",
+    "price": 1899,
+    "image": "/images/products/outdoor-sectional.jpg",
+    "model": "/src/assets/models/outdoor-sectional.glb",
+    "category": "Seating",
+    "description": "Modular sectional sofa with weather-resistant cushions and aluminum frame.",
+    "features": ["Modular design", "Weather-resistant cushions", "Aluminum frame", "Seats 6-8 people"]
+  },
+  {
+    "id": "fire-pit-table",
+    "name": "Fire Pit Table",
+    "price": 899,
+    "image": "/images/products/fire-pit-table.jpg",
+    "model": "/src/assets/models/fire-pit-table.glb",
+    "category": "Fire Features",
+    "description": "Propane fire pit table with decorative stones and safety screen.",
+    "features": ["Propane powered", "Safety screen included", "Decorative stones", "Easy ignition"]
+  },
+  {
+    "id": "hanging-chair",
+    "name": "Hanging Garden Chair",
+    "price": 549,
+    "image": "/images/products/hanging-chair.jpg",
+    "model": "/src/assets/models/hanging-chair.glb",
+    "category": "Seating",
+    "description": "Suspended rattan hanging chair with comfortable cushions.",
+    "features": ["Suspended design", "Rattan construction", "Comfortable cushions", "Weather resistant"]
+  },
+  {
+    "id": "outdoor-bar-set",
+    "name": "Outdoor Bar Set",
+    "price": 759,
+    "image": "/images/products/outdoor-bar-set.jpg",
+    "model": "/src/assets/models/outdoor-bar-set.glb",
+    "category": "Bar Furniture",
+    "description": "High-top bar table with 4 matching bar stools, perfect for outdoor entertaining.",
+    "features": ["High-top design", "4 bar stools included", "Weather resistant", "Modern styling"]
+  },
+  {
+    "id": "garden-swing",
+    "name": "Garden Swing Seat",
+    "price": 429,
+    "image": "/images/products/garden-swing.jpg",
+    "model": "/src/assets/models/garden-swing.glb",
+    "category": "Seating",
+    "description": "Classic garden swing with canopy and comfortable cushions.",
+    "features": ["Protective canopy", "Comfortable cushions", "Weather resistant", "Seats 2-3 people"]
+  },
+  {
+    "id": "outdoor-storage-box",
+    "name": "Outdoor Storage Box",
+    "price": 229,
+    "image": "/images/products/outdoor-storage-box.jpg",
+    "model": "/src/assets/models/outdoor-storage-box.glb",
+    "category": "Storage",
+    "description": "Large waterproof storage box for outdoor cushions and accessories.",
+    "features": ["Waterproof design", "Large capacity", "Lockable lid", "UV resistant"]
+  },
+  {
+    "id": "luxury-chaise-longue-1",
+    "name": "Premium Teak Chaise Longue",
+    "price": 899,
+    "image": "/images/products/luxury-chaise-longue-1.jpg",
+    "model": "/src/assets/models/luxury-chaise-longue-1.glb",
+    "modelEmbed": "<iframe frameborder='0' width='750px' height='500px' allowfullscreen mozallowfullscreen='true' webkitallowfullscreen='true' fullscreen; xr-spatial-tracking xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src='https://server.veewer.com/api/v1/objects/viewer/686ce77e524f98d61ab446fa/isLogoShown=true&showWatermark=false&backgroundColor=FFFFFF&activeTools=toolbar-sectionTool%2Ctoolbar-panTool%2Ctoolbar-zoomTool%2Ctoolbar-propertiesTool%2Ctoolbar-orbitTools%2Ctoolbar-modelStructureTool%2Ctoolbar-bimWalkTool%2Ctoolbar-cameraSubmenuTool%2Ctoolbar-explodeTool%2Ctoolbar-measurementSubmenuTool%2Cviewcube%2ChomeViewWrapper&isEditableMarkup=false'></iframe>",
+    "category": "Seating",
+    "description": "Luxurious teak chaise longue with adjustable backrest and premium cushions. Perfect for poolside relaxation.",
+    "features": ["Adjustable backrest", "Premium grade A teak", "Weather-resistant cushions", "Wheels for easy mobility"]
+  },
+  {
+    "id": "luxury-chaise-longue-2",
+    "name": "Obsidian Elite Chaise Longue",
+    "price": 1149,
+    "image": "/images/products/luxury-chaise-longue-2.jpg",
+    "model": "/src/assets/models/luxury-chaise-longue-2.glb",
+    "modelEmbed": "<iframe frameborder='0' width='750px' height='500px' allowfullscreen mozallowfullscreen='true' webkitallowfullscreen='true' fullscreen; xr-spatial-tracking xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src='https://server.veewer.com/api/v1/objects/viewer/686ce7bd524f98d61ab446fc/showWatermark=false&isLogoShown=true&backgroundColor=FFFFFF&activeTools=toolbar-sectionTool%2Ctoolbar-panTool%2Ctoolbar-zoomTool%2Ctoolbar-propertiesTool%2Ctoolbar-orbitTools%2Ctoolbar-modelStructureTool%2Ctoolbar-bimWalkTool%2Ctoolbar-cameraSubmenuTool%2Ctoolbar-explodeTool%2Ctoolbar-measurementSubmenuTool%2Cviewcube%2ChomeViewWrapper&isEditableMarkup=false'></iframe>",
+    "category": "Seating",
+    "description": "Sophisticated black aluminum chaise longue with sleek modern design and premium comfort padding. An epitome of contemporary luxury for discerning outdoor spaces.",
+    "features": ["Premium matte black finish", "Adjustable multi-position backrest", "High-density comfort padding", "Corrosion-resistant aluminum frame", "Ergonomic design", "Weather-resistant construction"]
+  },
+  {
+    "id": "luxury-chaise-longue-3",
+    "name": "Onyx Mesh Lounger Pro",
+    "price": 899,
+    "image": "/images/products/luxury-chaise-longue-3.jpg",
+    "model": "/src/assets/models/luxury-chaise-longue-3.glb",
+    "modelEmbed": "<iframe frameborder='0' width='750px' height='500px' allowfullscreen mozallowfullscreen='true' webkitallowfullscreen='true' fullscreen; xr-spatial-tracking xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src='https://server.veewer.com/api/v1/objects/viewer/686ce7ff524f98d61ab446fe/activeTools=toolbar-sectionTool%2Ctoolbar-panTool%2Ctoolbar-zoomTool%2Ctoolbar-propertiesTool%2Ctoolbar-orbitTools%2Ctoolbar-modelStructureTool%2Ctoolbar-bimWalkTool%2Ctoolbar-cameraSubmenuTool%2Ctoolbar-explodeTool%2Ctoolbar-measurementSubmenuTool%2Cviewcube%2ChomeViewWrapper&cameraSwitch=true&cameraSwitchTime=3&isEditableMarkup=false'></iframe>",
+    "category": "Seating",
+    "description": "Ultra-modern mesh chaise longue featuring precision-engineered textilene fabric and architectural aluminum frame. Designed for the ultimate in contemporary outdoor luxury and breathability.",
+    "features": ["Premium textilene mesh fabric", "Architectural aluminum frame", "Multi-angle adjustable backrest", "Superior breathability", "Stackable design", "UV-resistant materials", "Quick-dry technology"]
+  },
+  {
+    "id": "luxury-chaise-longue-4",
+    "name": "Wicker Chaise Longue with Canopy",
+    "price": 1099,
+    "image": "/images/products/luxury-chaise-longue-4.jpg",
+    "model": "/src/assets/models/luxury-chaise-longue-4.glb",
+    "modelEmbed": "",
+    "category": "Seating",
+    "description": "Premium wicker chaise longue with adjustable canopy for ultimate sun protection and comfort.",
+    "features": ["Adjustable canopy", "Premium wicker construction", "Multi-position backrest", "UV protection"]
+  },
+  {
+    "id": "luxury-chaise-longue-5",
+    "name": "Double Chaise Longue Daybed",
+    "price": 1299,
+    "image": "/images/products/luxury-chaise-longue-5.jpg",
+    "model": "/src/assets/models/luxury-chaise-longue-5.glb",
+    "modelEmbed": "",
+    "category": "Seating",
+    "description": "Spacious double chaise longue daybed with retractable canopy and storage compartment.",
+    "features": ["Double-wide design", "Retractable canopy", "Hidden storage", "Premium cushions"]
+  }
+]
