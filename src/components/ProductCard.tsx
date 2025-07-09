@@ -28,19 +28,21 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     });
   };
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.src = `https://via.placeholder.com/800x600/E5E7EB/6B7280?text=${encodeURIComponent(product.name)}`;
+  };
+
   return (
     <Link to={`/products/${product.id}`} className="block group">
       <div className="card overflow-hidden transform hover:scale-105 transition-all duration-300" onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--color-secondary)'} onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}>
         <div className="relative overflow-hidden">
-          <div
-            className="w-full h-48 bg-gray-200 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${product.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
+          <img 
+            src={product.image} 
+            alt={product.name}
+            className="w-full h-48 object-cover bg-gray-200"
+            onError={handleImageError}
+            loading="lazy"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
         </div>
         
         <div className="p-4">

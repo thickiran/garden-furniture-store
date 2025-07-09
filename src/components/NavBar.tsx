@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../hooks/useCart';
+import { useTheme } from '../context/ThemeContext';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
   const { itemCount } = useCart();
+  const { currentTheme } = useTheme();
   const navigate = useNavigate();
 
   const categories = [
@@ -31,7 +34,13 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-primary text-white sticky top-0 z-50 shadow-lg">
+    <nav 
+      className="sticky top-0 z-50 shadow-lg"
+      style={{
+        backgroundColor: currentTheme.colors.primary,
+        color: 'white',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
@@ -53,7 +62,11 @@ const NavBar: React.FC = () => {
               
               {isCollectionsOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-64 bg-white text-text shadow-xl rounded-lg py-2 z-50"
+                  className="absolute top-full left-0 mt-2 w-64 shadow-xl rounded-lg py-2 z-50"
+                  style={{
+                    backgroundColor: currentTheme.colors.surface,
+                    color: currentTheme.colors.text,
+                  }}
                   onMouseEnter={() => setIsCollectionsOpen(true)}
                   onMouseLeave={() => setIsCollectionsOpen(false)}
                 >
@@ -86,11 +99,12 @@ const NavBar: React.FC = () => {
 
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex items-center space-x-4">
-              <select className="bg-primary border border-gray-500 text-white px-2 py-1 rounded text-sm">
+              <ThemeSwitcher />
+              <select className="border border-gray-500 text-white px-2 py-1 rounded text-sm" style={{ backgroundColor: currentTheme.colors.primary }}>
                 <option>EN</option>
                 <option>TR</option>
               </select>
-              <select className="bg-primary border border-gray-500 text-white px-2 py-1 rounded text-sm">
+              <select className="border border-gray-500 text-white px-2 py-1 rounded text-sm" style={{ backgroundColor: currentTheme.colors.primary }}>
                 <option>USD</option>
                 <option>EUR</option>
                 <option>TRY</option>

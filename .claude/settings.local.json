@@ -4,7 +4,12 @@
       "Bash(rg:*)",
       "Bash(npm run dev:*)",
       "Bash(npm run build:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(ls:*)",
+      "Bash(pkill:*)",
+      "Bash(true)",
+      "WebFetch(domain:images.unsplash.com)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }

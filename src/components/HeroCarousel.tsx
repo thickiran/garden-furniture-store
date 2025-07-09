@@ -5,19 +5,19 @@ const HeroCarousel: React.FC = () => {
 
   const slides = [
     {
-      image: '/images/hero1.jpg',
-      title: 'Elevate Your Outdoor Living',
-      subtitle: 'Discover premium garden furniture designed for comfort and style'
+      image: '/images/teak-chaise.jpg',
+      title: 'Premium Teak Chaise Longue',
+      subtitle: 'Luxurious teak craftsmanship with adjustable comfort for ultimate relaxation'
     },
     {
-      image: '/images/hero2.jpg',
-      title: 'Transform Your Garden',
-      subtitle: 'Create the perfect outdoor oasis with our curated collection'
+      image: '/images/obsidian-chaise.jpg',
+      title: 'Obsidian Elite Chaise Longue',
+      subtitle: 'Sophisticated black aluminum design with premium comfort padding'
     },
     {
-      image: '/images/hero3.jpg',
-      title: 'Quality That Lasts',
-      subtitle: 'Weather-resistant furniture built to withstand the elements'
+      image: '/images/onyx-chaise.jpg',
+      title: 'Onyx Mesh Lounger Pro',
+      subtitle: 'Ultra-modern mesh design with superior breathability and style'
     }
   ];
 
@@ -45,42 +45,45 @@ const HeroCarousel: React.FC = () => {
             index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <div
-            className="w-full h-full bg-cover bg-center bg-gray-300"
-            style={{
-              backgroundImage: `url(${slide.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
+          <img 
+            src={slide.image} 
+            alt={slide.title} 
+            className="w-full h-full object-cover z-0"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40" />
         </div>
       ))}
 
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center text-white px-4 max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 transition-all duration-500">
-            {slides[currentSlide].title}
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 transition-all duration-500">
-            {slides[currentSlide].subtitle}
-          </p>
-          <button
-            onClick={scrollToProducts}
-            className="btn-primary text-lg px-8 py-4 transform hover:scale-105 transition-transform"
-          >
-            Shop Collection
-          </button>
+      <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="text-center text-white px-8 py-12 max-w-4xl backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl relative overflow-hidden">
+          {/* Glass effect overlay with subtle dark backdrop for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+          <div className="relative z-10">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 transition-all duration-500 drop-shadow-lg">
+              {slides[currentSlide].title}
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 transition-all duration-500 drop-shadow-md">
+              {slides[currentSlide].subtitle}
+            </p>
+            <button
+              onClick={scrollToProducts}
+              className="backdrop-blur-sm bg-white/20 hover:bg-white/30 border border-white/30 text-white text-lg px-8 py-4 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Shop Collection
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-white' : 'bg-white/50'
+            className={`w-4 h-4 rounded-full backdrop-blur-sm border border-white/30 transition-all duration-300 ${
+              index === currentSlide 
+                ? 'bg-white/80 shadow-lg' 
+                : 'bg-white/30 hover:bg-white/50'
             }`}
           />
         ))}
@@ -88,7 +91,7 @@ const HeroCarousel: React.FC = () => {
 
       <button
         onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all duration-300"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 backdrop-blur-sm bg-white/20 hover:bg-white/40 border border-white/30 text-white p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -97,7 +100,7 @@ const HeroCarousel: React.FC = () => {
 
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all duration-300"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 backdrop-blur-sm bg-white/20 hover:bg-white/40 border border-white/30 text-white p-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

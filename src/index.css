@@ -1,20 +1,39 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-primary: #2D5A27;
+  --color-secondary: #8B4513;
+  --color-accent: #D4A574;
+  --color-background: #FFFFFF;
+  --color-surface: #F8F9FA;
+  --color-text: #2C3E50;
+  --color-text-secondary: #6C757D;
+  --color-border: #DEE2E6;
+  --color-muted: #F8F9FA;
+  --color-hero: #2D5A27;
+  --font-primary: Inter, sans-serif;
+  --font-secondary: Georgia, serif;
+  --font-heading: 'Playfair Display', serif;
+}
 
 @layer base {
   body {
-    background-color: #ffffff;
-    color: #374151;
-    font-family: ui-sans-serif, system-ui, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #374151;
+    color: var(--color-text);
+    font-family: var(--font-heading);
   }
 }
 
 @layer components {
   .btn-primary {
-    background-color: #193425;
+    background-color: var(--color-primary);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -23,11 +42,11 @@
   }
   
   .btn-primary:hover {
-    background-color: #162d20;
+    filter: brightness(0.9);
   }
   
   .btn-secondary {
-    background-color: #D3B277;
+    background-color: var(--color-secondary);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -36,7 +55,7 @@
   }
   
   .btn-secondary:hover {
-    background-color: #c9a158;
+    filter: brightness(0.9);
   }
   
   .card {
@@ -49,5 +68,27 @@
   
   .card:hover {
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  }
+
+  /* Glassmorphism styles */
+  .glass-effect {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .glass-button {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .glass-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
   }
 }
