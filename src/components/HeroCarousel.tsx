@@ -37,7 +37,7 @@ const HeroCarousel: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-[70vh] overflow-hidden">
+    <div className="relative w-full h-[70vh] overflow-hidden" style={{backgroundColor: 'rgb(223, 223, 221)'}}>
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -48,26 +48,26 @@ const HeroCarousel: React.FC = () => {
           <img 
             src={slide.image} 
             alt={slide.title} 
-            className="w-full h-full object-cover z-0"
+            className="w-full h-full object-contain z-0"
           />
         </div>
       ))}
 
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="text-center text-white px-8 py-12 max-w-4xl backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl relative overflow-hidden">
+      <div className="absolute inset-0 flex items-end justify-center pb-16 z-10">
+        <div className="text-center text-white px-6 py-8 max-w-2xl backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl relative overflow-hidden">
           {/* Glass effect overlay with subtle dark backdrop for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-transparent pointer-events-none"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
           <div className="relative z-10">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 transition-all duration-500 drop-shadow-lg">
+            <h1 className="text-2xl md:text-4xl font-bold mb-3 transition-all duration-500 drop-shadow-lg">
               {slides[currentSlide].title}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 transition-all duration-500 drop-shadow-md">
+            <p className="text-lg md:text-xl mb-6 transition-all duration-500 drop-shadow-md">
               {slides[currentSlide].subtitle}
             </p>
             <button
               onClick={scrollToProducts}
-              className="backdrop-blur-sm bg-white/20 hover:bg-white/30 border border-white/30 text-white text-lg px-8 py-4 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="backdrop-blur-sm bg-white/20 hover:bg-white/30 border border-white/30 text-white text-base px-6 py-3 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Shop Collection
             </button>
