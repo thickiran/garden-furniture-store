@@ -6,17 +6,17 @@ const HeroCarousel: React.FC = () => {
   const slides = [
     {
       image: '/images/teak-chaise.jpg',
-      title: 'Premium Teak Chaise Longue',
+      title: 'Chaise Longue Riviera Teck',
       subtitle: 'Luxurious teak craftsmanship with adjustable comfort for ultimate relaxation'
     },
     {
       image: '/images/obsidian-chaise.jpg',
-      title: 'Obsidian Elite Chaise Longue',
+      title: 'Chaise Longue Obsidienne Élite',
       subtitle: 'Sophisticated black aluminum design with premium comfort padding'
     },
     {
       image: '/images/onyx-chaise.jpg',
-      title: 'Onyx Mesh Lounger Pro',
+      title: 'Transat Onyx Sophistiqué',
       subtitle: 'Ultra-modern mesh design with superior breathability and style'
     }
   ];

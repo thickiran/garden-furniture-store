@@ -35,6 +35,10 @@ const ProductDetails: React.FC = () => {
     setProduct(foundProduct || null);
   }, [id]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -66,7 +70,7 @@ const ProductDetails: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{product.name} - Garden Furniture Store</title>
+        <title>{product.name} - Jardin Privé</title>
         <meta name="description" content={product.description} />
       </Helmet>
       

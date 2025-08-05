@@ -5,7 +5,7 @@ const About: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - Garden Furniture Store</title>
+        <title>About Us - Jardin Privé</title>
         <meta name="description" content="Learn about our commitment to quality outdoor furniture and exceptional customer service." />
       </Helmet>
       
@@ -13,7 +13,7 @@ const About: React.FC = () => {
         <div className="text-white py-16" style={{backgroundColor: 'var(--color-primary)'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">About Garden Furniture Store</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">About Jardin Privé</h1>
               <p className="text-xl text-gray-200 max-w-3xl mx-auto">
                 Creating beautiful outdoor spaces with premium furniture that stands the test of time.
               </p>
@@ -27,7 +27,7 @@ const About: React.FC = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6" style={{color: 'var(--color-text)'}}>Our Story</h2>
                 <p className="text-gray-600 mb-4">
-                  Founded in 2010, Garden Furniture Store has been dedicated to transforming outdoor spaces 
+                  Founded in 2010, Jardin Privé has been dedicated to transforming outdoor spaces 
                   into beautiful, functional living areas. We believe that your garden should be an extension 
                   of your home, a place where memories are made and moments are cherished.
                 </p>

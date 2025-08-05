@@ -44,15 +44,17 @@ const NavBar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
-            <span className="text-xl font-bold">Garden Furniture Store</span>
+            <span className="text-xl font-bold">Jardin Privé</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <div className="relative group">
+            <div 
+              className="relative group"
+              onMouseEnter={() => setIsCollectionsOpen(true)}
+              onMouseLeave={() => setIsCollectionsOpen(false)}
+            >
               <button
-                className="flex items-center space-x-1 hover:text-secondary transition-colors"
-                onMouseEnter={() => setIsCollectionsOpen(true)}
-                onMouseLeave={() => setIsCollectionsOpen(false)}
+                className="flex items-center space-x-1 px-4 py-2 rounded-xl hover:text-secondary transition-all duration-400 ease-out hover:scale-105 hover:bg-white/10 hover:backdrop-blur-sm hover:border-2 hover:border-white/30 hover:shadow-lg hover:shadow-white/20 border-2 border-transparent"
               >
                 <span>Collections</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,24 +64,26 @@ const NavBar: React.FC = () => {
               
               {isCollectionsOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-64 shadow-xl rounded-lg py-2 z-50"
-                  style={{
-                    backgroundColor: currentTheme.colors.surface,
-                    color: currentTheme.colors.text,
-                  }}
-                  onMouseEnter={() => setIsCollectionsOpen(true)}
-                  onMouseLeave={() => setIsCollectionsOpen(false)}
+                  className="absolute top-full left-0 pt-2 z-50"
                 >
-                  <div className="grid grid-cols-2 gap-2 p-4">
-                    {categories.map((category) => (
-                      <button
-                        key={category}
-                        onClick={() => handleCategoryClick(category)}
-                        className="text-left px-2 py-1 hover:text-secondary transition-colors text-sm"
-                      >
-                        {category}
-                      </button>
-                    ))}
+                  <div
+                    className="w-64 shadow-xl rounded-lg py-2"
+                    style={{
+                      backgroundColor: currentTheme.colors.surface,
+                      color: currentTheme.colors.text,
+                    }}
+                  >
+                    <div className="grid grid-cols-2 gap-2 p-4">
+                      {categories.map((category) => (
+                        <button
+                          key={category}
+                          onClick={() => handleCategoryClick(category)}
+                          className="text-left px-2 py-1 hover:text-secondary transition-colors text-sm"
+                        >
+                          {category}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
@@ -87,12 +91,15 @@ const NavBar: React.FC = () => {
 
             <button
               onClick={handleProductsClick}
-              className="hover:text-secondary transition-colors"
+              className="px-4 py-2 rounded-xl hover:text-secondary transition-all duration-400 ease-out hover:scale-105 hover:bg-white/10 hover:backdrop-blur-sm hover:border-2 hover:border-white/30 hover:shadow-lg hover:shadow-white/20 border-2 border-transparent"
             >
               Products
             </button>
 
-            <Link to="/about" className="hover:text-secondary transition-colors">
+            <Link 
+              to="/about" 
+              className="px-4 py-2 rounded-xl hover:text-secondary transition-all duration-400 ease-out hover:scale-105 hover:bg-white/10 hover:backdrop-blur-sm hover:border-2 hover:border-white/30 hover:shadow-lg hover:shadow-white/20 border-2 border-transparent inline-block"
+            >
               About
             </Link>
           </div>

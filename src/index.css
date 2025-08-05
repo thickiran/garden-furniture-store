@@ -36,26 +36,42 @@
     background-color: var(--color-primary);
     color: white;
     padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     font-weight: 500;
-    transition: all 0.2s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
   }
   
   .btn-primary:hover {
-    filter: brightness(0.9);
+    transform: scale(1.05);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(45, 90, 39, 0.4), 
+                0 0 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    filter: brightness(1.1);
   }
   
   .btn-secondary {
     background-color: var(--color-secondary);
     color: white;
     padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     font-weight: 500;
-    transition: all 0.2s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
   }
   
   .btn-secondary:hover {
-    filter: brightness(0.9);
+    transform: scale(1.05);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4), 
+                0 0 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    filter: brightness(1.1);
   }
   
   .card {
@@ -83,12 +99,36 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
   }
 
   .glass-button:hover {
     background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
+    transform: scale(1.05) translateY(-2px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2), 
+                0 0 20px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Generic button hover effects for any button element */
+  button:not(.btn-primary):not(.btn-secondary):not(.glass-button) {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  button:not(.btn-primary):not(.btn-secondary):not(.glass-button):hover {
+    transform: scale(1.05);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 
+                0 0 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    filter: brightness(1.1);
   }
 }

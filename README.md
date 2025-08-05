@@ -1,4 +1,4 @@
-# Garden Furniture Store
+# Jardin Privé
 
 A modern e-commerce website for premium garden furniture built with Vite, React, and TypeScript. Inspired by the design of fabco.com.tr with a focus on clean aesthetics and user experience.
 

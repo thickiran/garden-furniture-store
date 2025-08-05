@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Garden Furniture Store</h3>
+            <h3 className="text-2xl font-bold mb-4">Jardin Privé</h3>
             <p className="text-gray-300 mb-4 max-w-md">
               Transform your outdoor space with our premium collection of garden furniture. 
               Quality craftsmanship meets timeless design for the perfect outdoor living experience.
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-600 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-300 text-sm">
-            © 2024 Garden Furniture Store. All rights reserved.
+            © 2024 Jardin Privé. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="text-gray-300 hover:text-yellow-500 transition-colors text-sm">Privacy Policy</a>
