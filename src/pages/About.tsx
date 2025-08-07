@@ -101,6 +101,39 @@ const About: React.FC = () => {
           </div>
         </div>
 
+        <div className="py-16" style={{backgroundColor: 'yellow', padding: '20px'}}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 style={{color: 'red', fontSize: '32px', fontWeight: 'bold', marginBottom: '20px'}}>🧪 VEEWER TEST SECTION 🧪</h1>
+            
+            <h2 style={{color: 'black', fontSize: '24px', marginBottom: '10px'}}>Test 1: Riviera Teck (Direct React iframe)</h2>
+            <div style={{ marginBottom: '30px' }}>
+              <iframe 
+                allowFullScreen
+                width="750"
+                height="500"
+                frameBorder="0"
+                src="https://server.veewer.com/api/v1/objects/viewer/686ce77e524f98d61ab446fa"
+                style={{ border: '5px solid red' }}
+              />
+            </div>
+            
+            <h2 style={{color: 'black', fontSize: '24px', marginBottom: '10px'}}>Test 2: dangerouslySetInnerHTML (same as ProductDetails)</h2>
+            <div style={{ marginBottom: '30px' }}>
+              <div dangerouslySetInnerHTML={{ 
+                __html: '<iframe allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" fullscreen frameborder="0" width="750px" height="500px" src="https://server.veewer.com/api/v1/objects/viewer/686ce77e524f98d61ab446fa" style="border: 5px solid green;"></iframe>' 
+              }} />
+            </div>
+            
+            {(() => {
+              console.log('🧪 ABOUT PAGE - VEEWER TESTS LOADED');
+              console.log('🧪 Check network tab to see what requests are made');
+              console.log('🧪 Red border = Direct React iframe');
+              console.log('🧪 Green border = dangerouslySetInnerHTML');
+              return null;
+            })()}
+          </div>
+        </div>
+
         <div className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">

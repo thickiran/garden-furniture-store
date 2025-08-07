@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import ProductDetails from './pages/ProductDetails';
 import About from './pages/About';
+import VeewerTest from './pages/VeewerTest';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/products/:id" element={<ProductDetails />} />
               <Route path="/about" element={<About />} />
+              <Route path="/veewer-test" element={<VeewerTest />} />
             </Routes>
           </main>
           <Footer />

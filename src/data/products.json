@@ -125,7 +125,7 @@
     "price": 899,
     "image": "/images/products/Teak.jpg",
     "model": "/src/assets/models/luxury-chaise-longue-1.glb",
-    "modelEmbed": "",
+    "modelEmbed": "<iframe allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" fullscreen frameborder='0' width='750px' height='500px' src='https://server.veewer.com/api/v1/objects/viewer/686ce77e524f98d61ab446fa'></iframe>",
     "category": "Seating",
     "description": "Luxurious teak chaise longue with adjustable backrest and premium cushions. Perfect for poolside relaxation.",
     "features": ["Adjustable backrest", "Premium grade A teak", "Weather-resistant cushions", "Wheels for easy mobility"]
@@ -180,7 +180,7 @@
     "price": 1399,
     "image": "/images/products/luxury-drinking-chaise.jpg",
     "model": "/src/assets/models/luxury-chaise-longue-6.glb",
-    "modelEmbed": "<iframe allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" fullscreen frameborder='0' width='750px' height='500px' src='https://server.veewer.com/api/v1/objects/viewer/686ce882524f98d61ab44702/'></iframe>",
+    "modelEmbed": "<iframe allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" fullscreen frameborder='0' width='750px' height='500px' src='https://server.veewer.com/api/v1/objects/viewer/686ce882524f98d61ab44702'></iframe>",
     "category": "Seating",
     "description": "Premium executive chaise longue combining rich teak wood with sleek steel frame and sophisticated charcoal cushioning. Perfect for sophisticated outdoor entertaining with built-in side table functionality.",
     "features": ["Premium teak wood accents", "Powder-coated steel frame", "High-density charcoal cushioning", "Adjustable backrest positions", "Integrated side table", "Weather-resistant materials", "Executive comfort design"]

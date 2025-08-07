@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veewer Test - Minimal</title>
+</head>
+<body>
+    <h1>Minimal Veewer Test</h1>
+    <p>This page contains ONLY the iframe - no React, no other JavaScript</p>
+    
+    <h2>Test 1: Riviera Teck (686ce77e524f98d61ab446fa)</h2>
+    <iframe 
+        allowfullscreen 
+        mozallowfullscreen="true" 
+        webkitallowfullscreen="true" 
+        fullscreen 
+        frameborder='0' 
+        width='750px' 
+        height='500px' 
+        src='https://server.veewer.com/api/v1/objects/viewer/686ce77e524f98d61ab446fa'>
+    </iframe>
+    
+    <h2>Test 2: Exécutif Monaco (686ce882524f98d61ab44702)</h2>
+    <iframe 
+        allowfullscreen 
+        mozallowfullscreen="true" 
+        webkitallowfullscreen="true" 
+        fullscreen 
+        frameborder='0' 
+        width='750px' 
+        height='500px' 
+        src='https://server.veewer.com/api/v1/objects/viewer/686ce882524f98d61ab44702'>
+    </iframe>
+    
+    <script>
+        console.log('🧪 MINIMAL TEST PAGE LOADED');
+        console.log('🧪 Check network tab to see what requests are made');
+        console.log('🧪 If you see parameter requests here, the issue is with Veewer itself');
+    </script>
+</body>
+</html>

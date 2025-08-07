@@ -230,17 +230,17 @@ const ProductDetails: React.FC = () => {
                   
                   {activeTab === '3d' && (
                     <div className="bg-gray-100 rounded-lg overflow-hidden">
-                      <div className="bg-green-500 text-white p-2 text-center font-bold">
-                        🔥 NEW CODE LOADED - CACHE CLEARED 🔥
+                      <div className="bg-blue-500 text-white p-2 text-center font-bold">
+                        🔍 DEBUGGING IFRAME HTML 🔍
                       </div>
                       {product.modelEmbed ? (
                         <div className="w-full aspect-[3/2] relative">
-                          <iframe
-                            src={cleanVewerUrl(product.modelEmbed)}
-                            className="w-full h-full border-0"
-                            allowFullScreen
-                            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
-                          />
+                          {(() => {
+                            console.log('🎯 EXACT IFRAME HTML BEING RENDERED:');
+                            console.log(product.modelEmbed);
+                            console.log('🎯 END OF IFRAME HTML');
+                            return <div dangerouslySetInnerHTML={{ __html: product.modelEmbed }} />;
+                          })()}
                         </div>
                       ) : product.model ? (
                         <ErrorBoundary fallback={
