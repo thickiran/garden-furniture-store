@@ -9,9 +9,6 @@ const SimpleTest: React.FC = () => {
       <div>
         <iframe 
           allowFullScreen 
-          mozallowfullscreen="true" 
-          webkitallowfullscreen="true" 
-          fullscreen 
           frameBorder='0' 
           width='750px' 
           height='500px' 

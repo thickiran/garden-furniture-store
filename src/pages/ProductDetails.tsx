@@ -6,19 +6,6 @@ import { useCart } from '../hooks/useCart';
 import productsData from '../data/products.json';
 import { Helmet } from 'react-helmet';
 
-const cleanVewerUrl = (embedHtml: string): string => {
-  if (!embedHtml) return '';
-  
-  const srcMatch = embedHtml.match(/src=['"]([^'"]+)['"]/);
-  if (!srcMatch) return '';
-  
-  const fullUrl = srcMatch[1];
-  
-  // Extract everything up to and including /viewer/[code]/
-  const viewerMatch = fullUrl.match(/(https?:\/\/[^\/]+\/api\/v1\/objects\/viewer\/[^\/]+\/)/);
-  
-  return viewerMatch ? viewerMatch[1] : '';
-};
 
 interface Product {
   id: string;
@@ -63,14 +50,12 @@ const ProductDetails: React.FC = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<'description' | 'features' | '3d'>('description');
-  const [iframeError, setIframeError] = useState(false);
   const [iframeLoading, setIframeLoading] = useState(true);
   const { addItem } = useCart();
 
   useEffect(() => {
     const foundProduct = productsData.find(p => p.id === id) as Product;
     setProduct(foundProduct || null);
-    setIframeError(false);
     setIframeLoading(true);
   }, [id]);
 
@@ -84,7 +69,6 @@ const ProductDetails: React.FC = () => {
       const timeoutId = setTimeout(() => {
         if (iframeLoading) {
           setIframeLoading(false);
-          setIframeError(true);
         }
       }, 10000);
 

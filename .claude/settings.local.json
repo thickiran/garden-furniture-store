@@ -15,7 +15,8 @@
       "Bash(node:*)",
       "Bash(find:*)",
       "Bash(rm:*)",
-      "WebFetch(domain:localhost)"
+      "WebFetch(domain:localhost)",
+      "Bash(npx tsc:*)"
     ],
     "deny": []
   }

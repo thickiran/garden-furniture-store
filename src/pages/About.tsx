@@ -109,9 +109,6 @@ const About: React.FC = () => {
             <div style={{ marginBottom: '30px' }}>
               <iframe 
                 allowFullScreen 
-                mozallowfullscreen="true" 
-                webkitallowfullscreen="true" 
-                fullscreen 
                 frameBorder='0' 
                 width='750px' 
                 height='500px' 
