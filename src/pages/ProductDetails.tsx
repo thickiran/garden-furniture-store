@@ -9,30 +9,15 @@ import { Helmet } from 'react-helmet';
 const cleanVewerUrl = (embedHtml: string): string => {
   if (!embedHtml) return '';
   
-  console.log('🔍 INPUT embed HTML:', embedHtml);
-  
   const srcMatch = embedHtml.match(/src=['"]([^'"]+)['"]/);
-  if (!srcMatch) {
-    console.warn('No src attribute found in embed HTML');
-    return '';
-  }
+  if (!srcMatch) return '';
   
   const fullUrl = srcMatch[1];
-  console.log('📎 EXTRACTED full URL:', fullUrl);
   
   // Extract everything up to and including /viewer/[code]/
   const viewerMatch = fullUrl.match(/(https?:\/\/[^\/]+\/api\/v1\/objects\/viewer\/[^\/]+\/)/);
   
-  if (viewerMatch) {
-    const cleanUrl = viewerMatch[1];
-    console.log('✂️ CLEANED URL (final result):', cleanUrl);
-    console.log('🚫 REMOVED:', fullUrl.replace(cleanUrl, ''));
-    return cleanUrl;
-  }
-  
-  console.warn('❌ Could not extract clean viewer URL, returning empty string');
-  console.warn('❌ Original URL was:', fullUrl);
-  return '';
+  return viewerMatch ? viewerMatch[1] : '';
 };
 
 interface Product {
@@ -98,7 +83,6 @@ const ProductDetails: React.FC = () => {
       // Set a timeout to detect if iframe fails to load within 10 seconds
       const timeoutId = setTimeout(() => {
         if (iframeLoading) {
-          console.warn('Iframe loading timeout for product:', product.id);
           setIframeLoading(false);
           setIframeError(true);
         }
@@ -230,17 +214,9 @@ const ProductDetails: React.FC = () => {
                   
                   {activeTab === '3d' && (
                     <div className="bg-gray-100 rounded-lg overflow-hidden">
-                      <div className="bg-blue-500 text-white p-2 text-center font-bold">
-                        🔍 DEBUGGING IFRAME HTML 🔍
-                      </div>
                       {product.modelEmbed ? (
-                        <div className="w-full aspect-[3/2] relative">
-                          {(() => {
-                            console.log('🎯 EXACT IFRAME HTML BEING RENDERED:');
-                            console.log(product.modelEmbed);
-                            console.log('🎯 END OF IFRAME HTML');
-                            return <div dangerouslySetInnerHTML={{ __html: product.modelEmbed }} />;
-                          })()}
+                        <div className="flex justify-center">
+                          <div style={{ width: '557px', height: '557px' }} dangerouslySetInnerHTML={{ __html: product.modelEmbed }} />
                         </div>
                       ) : product.model ? (
                         <ErrorBoundary fallback={

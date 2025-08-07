@@ -125,7 +125,7 @@
     "price": 899,
     "image": "/images/products/Teak.jpg",
     "model": "/src/assets/models/luxury-chaise-longue-1.glb",
-    "modelEmbed": "<iframe allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" fullscreen frameborder='0' width='750px' height='500px' src='https://server.veewer.com/api/v1/objects/viewer/686ce77e524f98d61ab446fa'></iframe>",
+    "modelEmbed": "<iframe allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" fullscreen frameborder='0' width='557px' height='557px' src='https://server.veewer.com/api/v1/objects/viewer/686ce77e524f98d61ab446fa'></iframe>",
     "category": "Seating",
     "description": "Luxurious teak chaise longue with adjustable backrest and premium cushions. Perfect for poolside relaxation.",
     "features": ["Adjustable backrest", "Premium grade A teak", "Weather-resistant cushions", "Wheels for easy mobility"]
@@ -136,7 +136,7 @@
     "price": 1149,
     "image": "/images/products/luxury-chaise-longue-2.jpg",
     "model": "/src/assets/models/luxury-chaise-longue-2.glb",
-    "modelEmbed": "",
+    "modelEmbed": "<iframe allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" fullscreen frameborder='0' width='557px' height='557px' src='https://server.veewer.com/api/v1/objects/viewer/686ce7bd524f98d61ab446fc'></iframe>",
     "category": "Seating",
     "description": "Sophisticated black aluminum chaise longue with sleek modern design and premium comfort padding. An epitome of contemporary luxury for discerning outdoor spaces.",
     "features": ["Premium matte black finish", "Adjustable multi-position backrest", "High-density comfort padding", "Corrosion-resistant aluminum frame", "Ergonomic design", "Weather-resistant construction"]
@@ -147,7 +147,7 @@
     "price": 899,
     "image": "/images/products/luxury-chaise-longue-3.jpg",
     "model": "/src/assets/models/luxury-chaise-longue-3.glb",
-    "modelEmbed": "",
+    "modelEmbed": "<iframe allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" fullscreen frameborder='0' width='557px' height='557px' src='https://server.veewer.com/api/v1/objects/viewer/686ce7ff524f98d61ab446fe'></iframe>",
     "category": "Seating",
     "description": "Ultra-modern mesh chaise longue featuring precision-engineered textilene fabric and architectural aluminum frame. Designed for the ultimate in contemporary outdoor luxury and breathability.",
     "features": ["Premium textilene mesh fabric", "Architectural aluminum frame", "Multi-angle adjustable backrest", "Superior breathability", "Stackable design", "UV-resistant materials", "Quick-dry technology"]
@@ -180,7 +180,7 @@
     "price": 1399,
     "image": "/images/products/luxury-drinking-chaise.jpg",
     "model": "/src/assets/models/luxury-chaise-longue-6.glb",
-    "modelEmbed": "<iframe allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" fullscreen frameborder='0' width='750px' height='500px' src='https://server.veewer.com/api/v1/objects/viewer/686ce882524f98d61ab44702'></iframe>",
+    "modelEmbed": "<iframe allowfullscreen mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" fullscreen frameborder='0' width='557px' height='557px' src='https://server.veewer.com/api/v1/objects/viewer/686ce882524f98d61ab44702'></iframe>",
     "category": "Seating",
     "description": "Premium executive chaise longue combining rich teak wood with sleek steel frame and sophisticated charcoal cushioning. Perfect for sophisticated outdoor entertaining with built-in side table functionality.",
     "features": ["Premium teak wood accents", "Powder-coated steel frame", "High-density charcoal cushioning", "Adjustable backrest positions", "Integrated side table", "Weather-resistant materials", "Executive comfort design"]
