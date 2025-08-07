@@ -6,6 +6,35 @@ import { useCart } from '../hooks/useCart';
 import productsData from '../data/products.json';
 import { Helmet } from 'react-helmet';
 
+const cleanVewerUrl = (embedHtml: string): string => {
+  if (!embedHtml) return '';
+  
+  console.log('🔍 INPUT embed HTML:', embedHtml);
+  
+  const srcMatch = embedHtml.match(/src=['"]([^'"]+)['"]/);
+  if (!srcMatch) {
+    console.warn('No src attribute found in embed HTML');
+    return '';
+  }
+  
+  const fullUrl = srcMatch[1];
+  console.log('📎 EXTRACTED full URL:', fullUrl);
+  
+  // Extract everything up to and including /viewer/[code]/
+  const viewerMatch = fullUrl.match(/(https?:\/\/[^\/]+\/api\/v1\/objects\/viewer\/[^\/]+\/)/);
+  
+  if (viewerMatch) {
+    const cleanUrl = viewerMatch[1];
+    console.log('✂️ CLEANED URL (final result):', cleanUrl);
+    console.log('🚫 REMOVED:', fullUrl.replace(cleanUrl, ''));
+    return cleanUrl;
+  }
+  
+  console.warn('❌ Could not extract clean viewer URL, returning empty string');
+  console.warn('❌ Original URL was:', fullUrl);
+  return '';
+};
+
 interface Product {
   id: string;
   name: string;
@@ -23,21 +52,61 @@ const Model: React.FC<{ url: string }> = ({ url }) => {
   return <primitive object={scene} scale={[1, 1, 1]} />;
 };
 
+const ErrorBoundary: React.FC<{ children: React.ReactNode; fallback?: React.ReactNode }> = ({ 
+  children, 
+  fallback = <div className="text-gray-500 text-center p-8">3D model unavailable</div> 
+}) => {
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    setHasError(false);
+  }, [children]);
+
+  if (hasError) {
+    return <>{fallback}</>;
+  }
+
+  return (
+    <div onError={() => setHasError(true)}>
+      {children}
+    </div>
+  );
+};
+
 const ProductDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<'description' | 'features' | '3d'>('description');
+  const [iframeError, setIframeError] = useState(false);
+  const [iframeLoading, setIframeLoading] = useState(true);
   const { addItem } = useCart();
 
   useEffect(() => {
     const foundProduct = productsData.find(p => p.id === id) as Product;
     setProduct(foundProduct || null);
+    setIframeError(false);
+    setIframeLoading(true);
   }, [id]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  useEffect(() => {
+    if (product?.modelEmbed && activeTab === '3d') {
+      // Set a timeout to detect if iframe fails to load within 10 seconds
+      const timeoutId = setTimeout(() => {
+        if (iframeLoading) {
+          console.warn('Iframe loading timeout for product:', product.id);
+          setIframeLoading(false);
+          setIframeError(true);
+        }
+      }, 10000);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [product?.id, iframeLoading, product?.modelEmbed, activeTab]);
 
   if (!product) {
     return (
@@ -160,23 +229,40 @@ const ProductDetails: React.FC = () => {
                   )}
                   
                   {activeTab === '3d' && (
-                    <div className="bg-gray-100 rounded-lg flex items-center justify-center">
+                    <div className="bg-gray-100 rounded-lg overflow-hidden">
+                      <div className="bg-green-500 text-white p-2 text-center font-bold">
+                        🔥 NEW CODE LOADED - CACHE CLEARED 🔥
+                      </div>
                       {product.modelEmbed ? (
-                        <div 
-                          className="w-full max-w-4xl mx-auto"
-                          dangerouslySetInnerHTML={{ __html: product.modelEmbed }}
-                        />
-                      ) : (
-                        <div className="h-64 w-full">
-                          <Suspense fallback={<div className="text-gray-500">Loading 3D model...</div>}>
-                            <Canvas camera={{ position: [0, 0, 5] }}>
-                              <ambientLight intensity={0.4} />
+                        <div className="w-full aspect-[3/2] relative">
+                          <iframe
+                            src={cleanVewerUrl(product.modelEmbed)}
+                            className="w-full h-full border-0"
+                            allowFullScreen
+                            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                          />
+                        </div>
+                      ) : product.model ? (
+                        <ErrorBoundary fallback={
+                          <div className="w-full aspect-[3/2] flex items-center justify-center bg-gray-100">
+                            <p className="text-gray-500">3D model unavailable</p>
+                          </div>
+                        }>
+                          <div className="w-full aspect-[3/2]">
+                            <Canvas camera={{ position: [0, 2, 5], fov: 45 }}>
+                              <ambientLight intensity={0.5} />
                               <directionalLight position={[10, 10, 5]} intensity={1} />
-                              <Model url={product.model} />
-                              <OrbitControls enableZoom={true} />
-                              <Environment preset="studio" />
+                              <Suspense fallback={null}>
+                                <Model url={product.model} />
+                                <Environment preset="sunset" />
+                              </Suspense>
+                              <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
                             </Canvas>
-                          </Suspense>
+                          </div>
+                        </ErrorBoundary>
+                      ) : (
+                        <div className="w-full aspect-[3/2] flex items-center justify-center bg-gray-100">
+                          <p className="text-gray-500">3D model not available</p>
                         </div>
                       )}
                     </div>
