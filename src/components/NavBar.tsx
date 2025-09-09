@@ -8,7 +8,7 @@ const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
   const { itemCount } = useCart();
-  const { currentTheme } = useTheme();
+  const { currentTheme, isGlassy } = useTheme();
   const navigate = useNavigate();
 
   const categories = [
@@ -35,8 +35,8 @@ const NavBar: React.FC = () => {
 
   return (
     <nav 
-      className="sticky top-0 z-50 shadow-lg"
-      style={{
+      className={`sticky top-0 z-50 shadow-lg ${isGlassy ? 'backdrop-blur-md bg-white/10 border-b border-white/20' : ''}`}
+      style={isGlassy ? { color: 'white' } : {
         backgroundColor: currentTheme.colors.primary,
         color: 'white',
       }}
@@ -69,8 +69,11 @@ const NavBar: React.FC = () => {
                   <div
                     className="w-64 shadow-xl rounded-lg py-2"
                     style={{
-                      backgroundColor: currentTheme.colors.surface,
-                      color: currentTheme.colors.text,
+                      backgroundColor: isGlassy ? 'rgba(255,255,255,0.10)' : currentTheme.colors.surface,
+                      color: isGlassy ? '#ffffff' : currentTheme.colors.text,
+                      backdropFilter: isGlassy ? 'blur(12px)' as any : undefined,
+                      WebkitBackdropFilter: isGlassy ? 'blur(12px)' as any : undefined,
+                      border: isGlassy ? '1px solid rgba(255,255,255,0.25)' : undefined,
                     }}
                   >
                     <div className="grid grid-cols-2 gap-2 p-4">
@@ -107,11 +110,17 @@ const NavBar: React.FC = () => {
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex items-center space-x-4">
               <ThemeSwitcher />
-              <select className="border border-gray-500 text-white px-2 py-1 rounded text-sm" style={{ backgroundColor: currentTheme.colors.primary }}>
+              <select 
+                className={`px-2 py-1 rounded text-sm ${isGlassy ? 'glass-button border-white/30 text-white' : 'border border-gray-500 text-white'}`}
+                style={isGlassy ? { background: 'rgba(255,255,255,0.15)' } : { backgroundColor: currentTheme.colors.primary }}
+              >
                 <option>EN</option>
                 <option>TR</option>
               </select>
-              <select className="border border-gray-500 text-white px-2 py-1 rounded text-sm" style={{ backgroundColor: currentTheme.colors.primary }}>
+              <select 
+                className={`px-2 py-1 rounded text-sm ${isGlassy ? 'glass-button border-white/30 text-white' : 'border border-gray-500 text-white'}`}
+                style={isGlassy ? { background: 'rgba(255,255,255,0.15)' } : { backgroundColor: currentTheme.colors.primary }}
+              >
                 <option>USD</option>
                 <option>EUR</option>
                 <option>TRY</option>
