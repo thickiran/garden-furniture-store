@@ -132,3 +132,12 @@
     filter: brightness(1.1);
   }
 }
+@layer components {
+  /* Glassy mode global tweaks */
+  .glassy .card {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}

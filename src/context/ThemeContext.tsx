@@ -205,6 +205,8 @@ interface ThemeContextType {
   themeName: string;
   setTheme: (themeName: string) => void;
   availableThemes: string[];
+  isGlassy: boolean;
+  setGlassy: (value: boolean) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -223,6 +225,13 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [themeName, setThemeName] = useState<string>('default');
+  const [isGlassy, setIsGlassy] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('glassy') === 'true';
+    } catch {
+      return false;
+    }
+  });
   
   const applyThemeToDOM = (theme: Theme) => {
     const root = document.documentElement;
@@ -236,10 +245,23 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     root.style.setProperty('--font-heading', theme.fonts.heading);
   };
   
-  // Apply theme on initial load
+  // Apply theme on initial load and when theme changes
   React.useEffect(() => {
     applyThemeToDOM(themes[themeName]);
   }, [themeName]);
+
+  // Toggle glassy class on root and persist preference
+  React.useEffect(() => {
+    const root = document.documentElement;
+    if (isGlassy) {
+      root.classList.add('glassy');
+    } else {
+      root.classList.remove('glassy');
+    }
+    try {
+      localStorage.setItem('glassy', String(isGlassy));
+    } catch {}
+  }, [isGlassy]);
   
   const setTheme = (newThemeName: string) => {
     if (themes[newThemeName]) {
@@ -253,6 +275,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     themeName,
     setTheme,
     availableThemes: Object.keys(themes),
+    isGlassy,
+    setGlassy: setIsGlassy,
   };
 
   return (
