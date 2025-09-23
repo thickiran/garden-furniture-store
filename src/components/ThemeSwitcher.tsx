@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const ThemeSwitcher: React.FC = () => {
-  const { currentTheme, themeName, setTheme, availableThemes } = useTheme();
+  const { currentTheme, themeName, setTheme, availableThemes, isGlassy, setGlassy } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleThemeChange = (newTheme: string) => {
@@ -37,11 +37,14 @@ const ThemeSwitcher: React.FC = () => {
 
       {isOpen && (
         <div 
-          className="absolute top-full left-0 mt-2 py-2 w-48 rounded-lg border shadow-lg z-50"
+          className="absolute top-full left-0 mt-2 py-2 w-56 rounded-lg border shadow-lg z-50"
           style={{
-            backgroundColor: currentTheme.colors.surface,
-            borderColor: currentTheme.colors.border,
+            backgroundColor: isGlassy ? 'rgba(255,255,255,0.10)' : currentTheme.colors.surface,
+            borderColor: isGlassy ? 'rgba(255,255,255,0.25)' : currentTheme.colors.border,
             boxShadow: currentTheme.shadows.lg,
+            backdropFilter: isGlassy ? 'blur(12px)' as any : undefined,
+            WebkitBackdropFilter: isGlassy ? 'blur(12px)' as any : undefined,
+            color: currentTheme.colors.text,
           }}
         >
           {availableThemes.map((theme) => (
@@ -76,7 +79,7 @@ const ThemeSwitcher: React.FC = () => {
                                    theme === 'sophisticated' ? '#8B4513' :
                                    theme === 'modern' ? '#000000' :
                                    theme === 'dark' ? '#BB86FC' : currentTheme.colors.primary,
-                    borderColor: currentTheme.colors.border,
+                    borderColor: isGlassy ? 'rgba(255,255,255,0.3)' : currentTheme.colors.border,
                   }}
                 />
                 <span>
@@ -88,6 +91,20 @@ const ThemeSwitcher: React.FC = () => {
               </div>
             </button>
           ))}
+
+          <div className="my-2 border-t" style={{ borderColor: isGlassy ? 'rgba(255,255,255,0.25)' : currentTheme.colors.border }} />
+          <div className="flex items-center justify-between px-4 py-2 text-sm">
+            <span className="mr-4">Glassy look</span>
+            <button
+              onClick={() => setGlassy(!isGlassy)}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 ${isGlassy ? 'bg-green-500' : 'bg-gray-300'}`}
+              aria-pressed={isGlassy}
+            >
+              <span
+                className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform duration-200 ${isGlassy ? 'translate-x-5' : 'translate-x-1'}`}
+              />
+            </button>
+          </div>
         </div>
       )}
     </div>
