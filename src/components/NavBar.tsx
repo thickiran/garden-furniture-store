@@ -69,11 +69,11 @@ const NavBar: React.FC = () => {
                   <div
                     className="w-64 shadow-xl rounded-lg py-2"
                     style={{
-                      backgroundColor: isGlassy ? 'rgba(255,255,255,0.10)' : currentTheme.colors.surface,
+                      backgroundColor: isGlassy ? 'rgba(255,255,255,0.24)' : currentTheme.colors.surface,
                       color: currentTheme.colors.text,
-                      backdropFilter: isGlassy ? 'blur(12px)' as any : undefined,
-                      WebkitBackdropFilter: isGlassy ? 'blur(12px)' as any : undefined,
-                      border: isGlassy ? '1px solid rgba(255,255,255,0.25)' : undefined,
+                      backdropFilter: isGlassy ? 'blur(16px)' as any : undefined,
+                      WebkitBackdropFilter: isGlassy ? 'blur(16px)' as any : undefined,
+                      border: isGlassy ? '1px solid rgba(255,255,255,0.35)' : undefined,
                     }}
                   >
                     <div className="grid grid-cols-2 gap-2 p-4">
