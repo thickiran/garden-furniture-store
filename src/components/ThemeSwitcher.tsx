@@ -44,7 +44,7 @@ const ThemeSwitcher: React.FC = () => {
             boxShadow: currentTheme.shadows.lg,
             backdropFilter: isGlassy ? 'blur(12px)' as any : undefined,
             WebkitBackdropFilter: isGlassy ? 'blur(12px)' as any : undefined,
-            color: isGlassy ? '#ffffff' : currentTheme.colors.text,
+            color: currentTheme.colors.text,
           }}
         >
           {availableThemes.map((theme) => (
@@ -57,7 +57,7 @@ const ThemeSwitcher: React.FC = () => {
                   : 'hover:bg-opacity-50'
               }`}
               style={{
-                color: theme === themeName ? currentTheme.colors.primary : (isGlassy ? '#ffffff' : currentTheme.colors.text),
+                color: theme === themeName ? currentTheme.colors.primary : currentTheme.colors.text,
                 backgroundColor: theme === themeName ? `${currentTheme.colors.primary}15` : 'transparent',
               }}
               onMouseEnter={(e) => {
